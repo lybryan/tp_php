@@ -51,6 +51,7 @@ include './include/connexion.php';
 			</thead>
 			<tbody>
 <?php
+$res = mysqli_query($conn, "SELECT f.*,a.nom,a.prenom FROM Film f, Artiste a WHERE f.idMes = a.idArtiste;");
 if ($res)
 {
 	foreach($res as $film)

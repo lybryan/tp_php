@@ -1,3 +1,3 @@
 <?php
-$conn = mysqli_connect("localhost","user","user","cinema");
+$conn = mysqli_connect("dwarves.iut-fbleau.fr","lyb","urbanrivals98","lyb");
 
