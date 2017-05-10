@@ -51,7 +51,11 @@ include './include/connexion.php';
 			</thead>
 			<tbody>
 <?php
-$res = mysqli_query($conn, "SELECT f.*,a.nom,a.prenom FROM Film f, Artiste a WHERE f.idMes = a.idArtiste;");
+				$nb_film=0;
+				for($i=0;$i<$page;$i++){
+						$res = mysqli_query($conn, "SELECT f.*,a.nom,a.prenom FROM Film as f join Artiste as a WHERE f.idMes = a.idArtiste LIMIT $nb_film,5;");
+						$nb_film=$nb_film+5;
+				}
 if ($res)
 {
 	foreach($res as $film)
@@ -74,7 +78,7 @@ if ($res)
 
 		<!-- Barre de pagination -->
 <?php
-$nbpages = 5; /* A calculer !!!! */
+$nbpages = 64/5+1; /* A calculer !!!! */
 $prev=$page-1;
 $next=$page+1;
 if ($prev<1) $prev=1;
