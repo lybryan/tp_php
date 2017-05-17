@@ -16,13 +16,14 @@ class personne {
 
 class contact extends personne{
 	public $mail;
-
+	
 	public function __construct($id=null,$nom="",$prenom="",$email=""){
-		// A COMPLETER
+		parent::__construct($id,$nom,$prenom);
+		$this->email = $email;
 	}
 
 	public function __toString(){
-		// A COMPLETER
+	return $this->contact;
 	}
 	public function save(){
 		$db = Database::getInstance();
