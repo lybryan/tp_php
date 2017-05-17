@@ -36,6 +36,7 @@ include './include/connexion.php';
 				<option value="-1">Tous</option>
 			</select> 
 			<button type="submit" class="btn">Chercher</button>
+					
 		</form>
 
 		<!-- Table des films -->
@@ -50,6 +51,20 @@ include './include/connexion.php';
 				</tr>
 			</thead>
 			<tbody>
+				<?php
+				
+										$res = mysqli_query($conn, "SELECT DISTINCT nom FROM Artiste a, Film f WHERE a.idArtiste = f.idMes;");
+				if ($res)
+{
+	foreach($res as $film)
+	{
+		echo $film['nom'];
+
+	}
+}
+				
+
+				?>
 <?php
 				$nb_film=0;
 				for($i=0;$i<$page;$i++){
