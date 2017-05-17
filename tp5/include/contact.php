@@ -5,11 +5,12 @@ class personne {
 	public $prenom;
 
 	public function __construct($id=null,$nom="",$prenom=""){
-		// A COMPLETER
+				$this->id = $id;
+				$this->nom = $nom;
+				$this->prenom = $prenom;
 	}
-
 	public function __toString(){
-		//A COMPLETER
+        return $this->personne;
 	}
 }
 
