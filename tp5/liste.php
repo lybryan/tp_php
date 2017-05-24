@@ -1,6 +1,6 @@
 <?php
 include './include/contact.php';
-$liste = contact::getListe();
+$liste = contact::getList();
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,13 +24,13 @@ $liste = contact::getListe();
 				<?php foreach($liste as $contact) : ?>
 				<tr>
 					<td>
-						<?php echo $contact->prenom;?>
+						<?php echo $contact['prenom'];?>
 					</td>
 					<td>
-						<?php echo $contact->nom;?>
+						<?php echo $contact['nom'];?>
 					</td>
 					<td>
-						<?php echo $contact->email;?>
+						<?php echo $contact['email'];?>
 					</td>
 				</tr>
 				<?php endforeach;?>

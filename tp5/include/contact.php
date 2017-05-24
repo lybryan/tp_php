@@ -37,7 +37,9 @@ class contact extends personne{
 	}
 	public static function getList(){
 		$db = Database::getInstance();
-		// A COMPETER
+    $liste=$db->query("SELECT * FROM Contact");
+		foreach($liste as $res)
+			return $res;
 	}
 
 	public static function getFromId($id){
@@ -67,7 +69,7 @@ class Database {
 	protected function __construct() {
 		try{
 			// A COMPETER AVEC VOS IDENTIFIANTS
-			$this->_db = new PDO("mysql:host=localhost;charset=UTF8;dbname=","user","mdp");
+			$this->_db = new PDO("mysql:host=dwarves.iut-fbleau.fr;charset=UTF8;dbname=lyb","lyb","urbanrivals98");
 		}
 		catch(Exception $e){
 			die($e->getMessage());
